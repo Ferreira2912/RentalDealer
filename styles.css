@@ -33,6 +33,18 @@ h1 {
     font-size: 2.5rem;
 }
 
+.list {
+    display: flex;
+    justify-content: center;
+}
+
+.titlecars {
+    color: #1d1d1d;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 35px;
+}
+
 .nav-link {
     color: #fff;
     font-size: 1.2rem;
@@ -47,11 +59,6 @@ h1 {
     transform: scale(1.1);
 }
 
-.list {
-    display: flex;
-    justify-content: center;
-}
-
 .car-list {
     display: flex;
     gap: 30px;
@@ -60,24 +67,36 @@ h1 {
     padding: 40px 0;
 }
 
-.titlecars {
-    text-align: center;
-    margin-top: 35px;
-    font-size: 35px;
-}
-
 .car {
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     max-width: 300px;
+    cursor: pointer;
+    position: relative;
 }
 
 .car:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.car.selected {
+    background-color: #1a1a2e;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.car.selected h3, .car.selected p {
+    color: #fff;
+}
+
+
+.car.selected img {
+    filter: grayscale(50%);
+    opacity: 0.9;
 }
 
 .car img {
@@ -143,6 +162,13 @@ h1 {
     max-width: 150px;
 }
 
+.selected-car-message {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .btn-rent {
     background-color: #1a1a2e;
     color: #fff;
@@ -156,7 +182,12 @@ h1 {
     width: 100%;
 }
 
-.btn-rent:hover {
+#rent-button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#rent-button:not([disabled]):hover {
     background-color: #f44336;
     transform: translateY(-5px);
 }
@@ -175,4 +206,17 @@ footer {
     bottom: 0;
     width: 100%;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fade-out 1s ease forwards;
 }

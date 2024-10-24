@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0; 
+}
+
+header {
+    background-color: #1a1a2e;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+}
+
+header:hover {
+    background-color: #0f0f1f;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-link {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #f44336;
+    transform: scale(1.1);
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: hsl(0, 1%, 85%);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.back-button:hover {
+    color: #eeeeee;
+}
+
+.back-button svg {
+    width: 30px;
+    height: 30px;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.options-container {
+    text-align: center;
+}
+
+.btn-receipt {
+    background-color: #1a1a2e;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-receipt:hover {
+    background-color: #f44336;
+    transform: translateY(-5px);
+}
+
+footer {
+    background-color: #1a1a2e;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
